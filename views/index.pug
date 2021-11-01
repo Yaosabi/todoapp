@@ -7,9 +7,16 @@ block content
     tr
     th Description
     th Completed?
-   tbody
+    tbody
      each item in toDoItems
        tr
           td= item.description
           td= item.completed
-  p Welcome to #{title}
+          td
+            div.row
+              if item.completed
+                a(href=`incomplete/${item.id}`) Mark Incomplete
+              else
+                a(href=`complete/$(item.id}`) Mark Complete
+
+  a(href="/add") Add Item
