@@ -17,7 +17,7 @@ router.get('/add', function (req, res) {
 router.post('/add', async function(req, res){
   const{sequelize}= require("../models/index");
   const{QueryTypes} = require("sequelize");
-  await sequelize.query('insert into todo (description) values (:description)',){
+  await sequelize.query('insert into todo (description) values (:description)',{
     type: QueryTypes.INSERT,
     replacements:{
       description: req.body.description
@@ -28,7 +28,7 @@ router.post('/add', async function(req, res){
 
 router.get('/complete/:id', async function(req, res){
   const {sequelize} = require("../models/index");
-  const{QueryTypes} = require("sequelize");
+  const {QueryTypes} = require("sequelize");
   await sequelize.query('update todo set completed = true where id = :id', {
     type: QueryTypes.UPDATE,
     replacements: {
@@ -40,7 +40,7 @@ router.get('/complete/:id', async function(req, res){
 
 router.get('/incomplete/:id', async function(req, res){
   const {sequelize} = require("../models/index");
-  const{QueryTypes} = require("sequelize");
+  const {QueryTypes} = require("sequelize");
   await sequelize.query('update todo set completed = false where id = :id', {
     type: QueryTypes.UPDATE,
     replacements: {
