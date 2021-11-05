@@ -2,8 +2,8 @@
   "development": {
     "username": "murillo_f6za",
     "password": "hot879Feathers",
-    "database": "f6za_db",
-    "host": "web-applications.caj7agbzaqsl.us-west-1.rds.amazonaws,com",
+    "database": "murillo_f6za_db",
+    "host": "web-applications.caj7agbzaqsl.us-west-1.rds.amazonaws.com",
     "dialect": "postgres"
   },
   "test": {
